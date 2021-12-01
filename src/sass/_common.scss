@@ -1,0 +1,40 @@
+/* -----------------------------
+▼全体設定▼
+----------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: $black;
+  font-size:1.4rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+::selection {
+  background: rgba($color: $blue, $alpha:0.7);
+  color: darken($black,20%);
+}
+
+/* Firefox */
+::-moz-selection {
+  background: rgba($color: $blue, $alpha:0.7);
+  color: darken($black,20%);
+}
+
+/* -----------------------------
+▲全体設定▲
+----------------------------- */

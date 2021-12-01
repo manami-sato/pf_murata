@@ -1,0 +1,50 @@
+doctype html
+html(lang="ja")
+	head
+		include _head.pug
+		link(rel="stylesheet", href="css/index.css")
+		title 村田葵 ポートフォリオサイト
+	body
+		header
+			nav
+				ul
+					li
+						a(href="#about") about
+					li
+						a(href="#works") works
+					li
+						a(href="#contact") contact
+		main
+			div.index__main
+				div.index__main--txt
+					p はじめまして。
+					p わたしの名前は、村田葵です｡
+					p murata aoi portfolio site
+			div.index__intro
+				div.index__intro--movie マインド
+			div.index__about#about
+				div.index__about--txt
+					p わたしについて
+					p 村田葵 murata aoi
+					p 2000/2/29 北海道出身
+					p
+						|秋田公立美術大学 美術学部美術学科<br>
+						|ものづくりデザイン専攻（陶芸・漆）<br>
+						|秋田公立美術大学大学院 複合芸術研究科 志望<br>
+					a(href="https://twitter.com/_ao3104/",target="_blank").index--about__tw @_ao3104
+					a(href="https://www.instagram.com/mrp_creator/",target="_blank").index--about__ig @mrp_creator
+					div.index__about--img
+						img(src="img/about.png",alt="村田葵イラスト")
+			div.index__works#works
+				div.index__works--bg
+				div.index__works--bg
+			div.index__contact#contact
+				p murata aoi
+				a(href="mailto:cyubabu.3104@gmail.com") cyubabu.3104@gmail.com
+				footer
+					small &copy; 2021 murata aoi presented by amane
+		a(href="#").index__pageTop
+			span
+				|SCROLL<br>
+				|TOP
+		include _foot.pug

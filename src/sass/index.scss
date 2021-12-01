@@ -1,0 +1,599 @@
+@import "ress";
+@import "ver";
+@import "common";
+
+main{
+	width: 100vw;
+}
+
+nav ul{
+	font-family: 'Montserrat', sans-serif;
+	display: flex;
+	position: fixed;
+	top:40px;
+	right:5%;
+	z-index: 2;
+	font-size:1.8rem;
+	li{
+		margin-right: 80px;
+		cursor: pointer;
+		a{
+			transition: 0.2s opacity;
+			opacity: 1;
+			&:hover{
+				opacity: 0.6;
+			}
+		}
+		&:last-child{
+			margin: 0;
+		}
+	}
+}
+.navAdd{
+	color:$white;
+}
+
+.index__add {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* -------------------------------
+▼背景設定ここから▼
+------------------------------- */
+/* --------- 1st View --------- */
+.index__main--bg{
+	@include bgSet;
+}
+/* ---------- footer ---------- */
+.index__foot--bg{
+	@include bgSet;
+	img{
+		filter :brightness(50%);
+	}
+}
+.bgAdd{
+	display: block;
+}
+/* -------------------------------
+▲背景設定ここまで▲
+------------------------------- */
+/* -------------------------------
+▼ファーストビューここから▼
+------------------------------- */
+.index__main{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: flex-end;
+	position: relative;
+	.index__main--txt{
+		background: rgba($color: $yellow, $alpha: 0.7);
+		width: 45vw;
+		min-width: 450px;
+		height: 100vh;
+		padding: 240px 5vw 0;
+		font-weight: bold;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		margin: auto 0;
+		position: relative;
+		&::before{
+			content: "";
+			background: url("../img/main2.svg") no-repeat;
+			background-size: contain;
+			height: 100vh;
+			width: 32vh;
+			pointer-events: none;
+			position: absolute;
+			left: calc(-32vh + 1px);
+			top: 0;
+		}
+		p{
+			&:nth-child(1){
+				font-size:2.2rem;
+			}
+			&:nth-child(2){
+				min-width: 600px;
+				font-size:3.5rem;
+				margin: 15px 0 65px;
+				display: inline-block;
+				text-align: right;
+				z-index: 1;
+				&::after{
+					content: "";
+					display: block;
+					background: rgba($color: $black, $alpha: 0.45);
+					width: 65%;
+					height: 10px;
+					margin: 65px 0 0 35%;
+				}
+			}
+			&:nth-child(3){
+				font-size:2rem;
+				font-family: 'Montserrat', sans-serif;
+			}
+		}
+	}
+}
+/* -------------------------------
+▲ファーストビューここまで▲
+------------------------------- */
+/* -------------------------------
+▼イントロダクションここから▼
+------------------------------- */
+.index__intro{
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 80vh;
+}
+/* -------------------------------
+▲イントロダクションここまで▲
+------------------------------- */
+/* -------------------------------
+▼aboutここから▼
+------------------------------- */
+.index__about{
+	background:url("../img/about_bg.png"),lighten($yellow,10%);
+	// background-size:auto 80% ,contain ;
+	background-size:auto 90% ,contain ;
+	background-repeat: no-repeat no-repeat;
+	// background-position: center center,center center;
+	background-position: left 40% center,center center;
+	height: 120vh;
+	position: relative;
+	.index__about--txt{
+		width: 400px;
+		height: 427px;
+		margin: auto;
+		position: absolute;
+		top:0;
+		bottom: 0;
+		left: -15%;
+		right: 0;
+		padding:120px 50px 40px;
+		p{
+			&:nth-child(1){
+				font-size:1.8rem;
+				font-weight: bold;
+				margin-bottom: 15px;
+				display: inline-block;
+				&::after{
+					content: "";
+					display: block;
+					margin-top: 7px;
+					background:$black;
+					height: 3px;
+					width: 120%;
+				}
+			}
+			&:nth-child(2){
+				font-size:2.5rem;
+				font-weight: bold;
+			}
+			&:nth-child(3){
+				margin: 5px 0 15px;
+				font-size: 1.3rem;
+			}
+			&:nth-child(4){
+				margin-bottom: 15px;
+				font-size: 1.3rem;
+				line-height: 2.2rem;
+			}
+		}
+		a{
+			display: block;
+			font-size: 1.4rem;
+			font-family: 'Montserrat', sans-serif;
+			display: flex;
+			align-items: center;
+			&::before{
+				content: "";
+				background-repeat: no-repeat;
+				background-size:contain;
+				width: 1.5rem;
+				height: 1.5rem;
+				display: inline-block;
+				margin: 3px 5px 0 0;
+			}
+		}
+		.index--about__tw{
+			&::before{
+				background-image:url("../img/shere_tw.svg");
+			}
+		}
+		.index--about__ig{
+			margin-top: 2px;
+			&::before{
+				background-image:url("../img/shere_ig.svg");
+			}
+		}
+	}
+	.index__about--img{
+		margin: auto;
+		position: absolute;
+		top:50%;
+		bottom: 0;
+		left: 100%;
+		right: 0;
+		width: 33vh;
+		height: 46vh;
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+}
+/* -------------------------------
+▲aboutここまで▲
+------------------------------- */
+/* -------------------------------
+▼worksここから▼
+------------------------------- */
+.index__works--data{
+	width: 90vw;
+	max-width: 1200px;
+	display: flex;
+	flex-wrap: wrap;
+	padding-left: 100px;
+	margin:20vh auto 0;
+	justify-content: space-around;
+	&:first-child{
+		margin: 0 auto;
+	}
+	.index__works--thumbnail{
+		height: 50vh;
+		min-height: 300px;
+		border-radius: 40px;
+		overflow: hidden;
+		box-shadow: 3px 3px 10px rgba($color:$black, $alpha:0.40);
+		margin:0 2.5%;
+		display: flex;
+		align-items: center;
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	.index__works--txt{
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
+}
+.index__works--caption{
+	font-size:2.2rem;
+	font-weight: bold;
+	display: inline-block;
+	margin-bottom: 35px;
+	line-height: 4.5rem;
+	&::after{
+		content: "";
+		display: block;
+		background: $black;
+		width: 70%;
+		height: 5px;
+		margin-top: 15px;
+	}
+}
+.index__works--ttl{
+	margin-bottom: 40px;
+}
+/* ----------- index ---------- */
+.index__works--bgTxt{
+	position: absolute;
+	bottom: 40vh;
+	left:-250px;
+	font-family: adobe-handwriting-ernie,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	transform: rotateZ(90deg);
+	font-size: 12rem;
+	pointer-events: none;
+	width: 100vh;
+	height: 200px;
+	color:#EBEBEB;
+}
+.index__works{
+	.index__works--bg{
+		padding:25vh 0;
+		position: relative;
+		&:nth-child(1){//学内
+			background: linear-gradient(135deg,#fff,#eee);
+		}
+		&:nth-child(2){//学外
+			background: linear-gradient(135deg,lighten($yellow,10%),#DBD7AE);
+			// background:lighten($yellow,10%);
+			.index__works--txt{
+				color:darken($color: $black, $amount: 15%);
+			}
+			.index__works--caption{
+				&::after{
+					background:darken($color: $black, $amount: 15%);
+				}
+			}
+			.index__works--btn{
+				@include btnSet($darkYellow,#fff,0.2);
+				transition: 0.2s background,0.2s box-shadow;
+				span{
+					transform: translateX(-18px) translateY(-2px);
+				}
+				&::before{
+					@include btnArrowSet($color:$darkYellow);
+				}
+				&::after{
+					@include btnArrowSet(10px,$darkYellow,19px,29px,45deg);
+				}
+				&:hover{
+					@include btnSet($black,#F2F2F2,0.1);
+					&::before{
+						@include btnArrowSet($color:$darkYellow,$width:45px);
+					}
+				}
+			}
+			.index__works--bgTxt{
+				color: #CCC890;
+			}
+		}
+	}
+	.index__works--btn{
+		@include btnSet();
+		transition: 0.2s background,0.2s box-shadow;
+		span{
+			transform: translateX(-18px) translateY(-2px);
+		}
+		&::before{
+			@include btnArrowSet($color:$black);
+		}
+		&::after{
+			@include btnArrowSet(10px,$black,19px,29px,45deg);
+		}
+		&:hover{
+			@include btnSet($black,#F2F2F2,0.1);
+			&::before{
+				@include btnArrowSet(45px);
+			}
+		}
+	}
+}
+/* ------- モーダルウィンドウ ------- */
+.index__modal{
+	position: fixed;
+	max-width: 1200px;
+	max-height: 900px;
+	top: 6vh;
+	left:10vw;
+	width: 80vw;
+	height: 88vh;
+	padding: 3% 5%;
+	background: linear-gradient(135deg,#fff,#eee);
+	border-radius:40px ;
+	z-index: 5;
+	display: grid;
+	opacity: 1;
+	animation: modalFadeIn 0.2s;
+	grid-template-columns: 40% 60%;
+	grid-template-rows: auto auto;
+	.index__modal--data{
+		grid-column: 1;
+		grid-row: 1;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		.index__works--txt{
+			margin-bottom: 40px;
+			font-size:1.2rem;
+		}
+	}
+	.index__modal--img{
+		grid-column: 2;
+		grid-row: 1/3;
+		padding-left: 5%;
+		overflow-y: scroll;
+		img{
+			width: 100%;
+		}
+	}
+	.index__modal--btn{
+		grid-column: 1;
+		grid-row: 2;
+		@include btnSet($width:150px,$height:40px);
+		transition: 0.2s background,0.2s box-shadow;
+		span{
+			transform: translateX(15px) translateY(-2px);
+		}
+		&::before{
+			@include btnArrowSet($bottom:10px,$right:auto,$left:30px);
+		}
+		&::after{
+			@include btnArrowSet(10px,$black,14px,111px,135deg);
+		}
+		&:hover{
+			@include btnSet($black,#F2F2F2,0.1,$width:150px,$height:40px);
+			&::before{
+				@include btnArrowSet($width:45px,$bottom:10px,$right:auto,$left:30px);
+			}
+		}
+	}
+}
+.index__modal--bg{
+	width: 100vw;
+	height: 100vh;
+	z-index: 3;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background:rgba($color: $black, $alpha: 0.6) ;
+	opacity: 1;
+	animation: modalFadeIn 0.2s;
+}
+@keyframes modalFadeIn{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+/* -------------------------------
+▲worksここまで▲
+------------------------------- */
+/* -------------------------------
+▼contactここから▼
+------------------------------- */
+.index__contact{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	color: $white;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	// background: rgba($color: #000000, $alpha: 0.4);
+	p{
+		font-family: 'Montserrat', sans-serif;
+		font-size: 3rem;
+		font-weight: bold;
+	}
+	a{
+		font-size:1.8rem;
+		color: $white;
+		margin: 10px 0 40px;
+		display: inline-block;
+		transition: 0.2s color;
+		text-decoration: underline;
+		&:hover{
+			color: darken($white, 20%);
+		}
+	}
+	small{
+		font-size:1.3rem;
+		&::before{
+			content: "";
+			display: block;
+			background: $white;
+			width: 80%;
+			height: 3px;
+			margin: 0 auto 55px;
+		}
+	}
+}
+/* -------------------------------
+▲contactここまで▲
+------------------------------- */
+
+/* -------------------------------
+▼スクロールここから▼
+------------------------------- */
+.index__pageTop{
+	font-family: 'Montserrat', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	bottom:50px;
+	right:50px;
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	text-align: center;
+	background: rgba($color: $blue, $alpha:0.7);
+	font-size:1.2rem;
+	transition: 0.2s background;
+	span{
+		transition: 0.2s transform;
+		transform: translateY(0);
+		position: relative;
+		&::before{
+			@include arrowSet(8px,0);
+			transform: rotateZ(45deg);
+		}
+		&::after{
+			@include arrowSet();
+			transform: rotateZ(-45deg);
+		}
+	}
+	&:hover{
+		background: rgba($color: darken($blue,5%), $alpha:0.7);
+		span{
+			transform: translateY(-5px);
+			&::before{
+				opacity: 1;
+			}
+			&::after{
+				opacity: 1;
+			}
+		}
+	}
+}
+/* -------------------------------
+▲スクロールここまで▲
+------------------------------- */
+@media screen and (min-width: 1001px){//1000px以上
+
+	/* -------------------------------
+	▼worksここから▼
+	------------------------------- */
+	/* ----------- index ---------- */
+	.index__works{
+		.index__works--data{
+			&:nth-of-type(even){
+				.index__works--thumbnail{
+					order:1;
+				}
+				.index__works--txt{
+					order: 2;
+					text-align: right;
+					display: flex;
+					flex-direction: column;
+					align-items: flex-end;
+					justify-content: center;
+				}
+				.index__works--caption{
+					&::after{
+						margin: 15px 0 0 auto;
+					}
+				}
+			}
+			.index__works--thumbnail{
+				width: 60%;
+				max-width: 600px;
+			}
+			.index__works--txt{
+				width: 35%;
+				// margin:0 2.5%;
+			}
+		}
+	}
+	/* -------------------------------
+	▲worksここまで▲
+	------------------------------- */
+}
+@media screen and (max-width: 1000px) {//1000px未満
+
+	/* -------------------------------
+	▼worksここから▼
+	------------------------------- */
+	/* ----------- index ---------- */
+	.index__works{
+		.index__works--thumbnail{
+			width: 80%;
+			order: 1;
+		}
+		.index__works--txt{
+			width: 70%;
+			margin:30px 2.5% 0;
+			order: 2;
+		}
+	}
+	/* -------------------------------
+	▲worksここまで▲
+	------------------------------- */
+
+}
